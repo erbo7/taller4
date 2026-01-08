@@ -18,6 +18,7 @@ cx\TipoDocumentoDAO.class
 controlador\RecepcionistaServlet.class
 controlador\RecordatorioServlet.class
 modelo\Raza.class
+cx\CiudadDAO.class
 modelo\TipoDocumentoVeterinario.class
 cx\RecepcionistaDAO.class
 cx\VeterinarioDAO.class
@@ -33,6 +34,7 @@ modelo\Mascota.class
 modelo\TipoDocumento.class
 modelo\Veterinario.class
 controlador\AgendaServlet.class
+modelo\Ciudad.class
 modelo\Usuario.class
 controlador\ProcedimientoServlet.class
 cx\TipoDocumentoVeterinarioDAO.class

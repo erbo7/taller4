@@ -99,7 +99,6 @@ public class AgendaDAO {
         }
     }
 
-    // ✅ ACTUALIZAR agenda (CORREGIDO con logs)
     // ✅ ACTUALIZAR agenda (CORREGIDO - sin esperar ResultSet)
     public String actualizar(Agenda agenda, int modificadoPor) {
         System.out.println("=== AGENDADAO.actualizar() ===");
@@ -221,7 +220,7 @@ public class AgendaDAO {
     // ✅ Obtener todas las agendas activas (CORREGIDO - SIN DURACION_MINUTOS)
     public List<Agenda> obtenerTodas() {
         List<Agenda> agendas = new ArrayList<>();
-        // ✅ QUITADO: tt.DURACION_MINUTOS
+        
         String sql = "SELECT a.*, v.NOMBRE AS nombre_veterinario, "
                 + "tt.NOMBRE AS nombre_tipo_turno, " // <-- SIN DURACION_MINUTOS
                 + "u.NOMBRE AS nombre_usuario "
@@ -230,6 +229,7 @@ public class AgendaDAO {
                 + "LEFT JOIN tipos_turno tt ON a.ID_TIPO_TURNO = tt.ID_TIPO_TURNO "
                 + "LEFT JOIN usuarios u ON a.CREADO_POR = u.ID_USUARIO "
                 + "WHERE a.ESTADO = 'ACTIVO' "
+                + "AND a.FECHA >= CURRENT_DATE "
                 + "ORDER BY a.FECHA DESC, a.HORA_INICIO ASC";
 
         try (Connection conn = cx.conectar(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
@@ -280,7 +280,7 @@ public class AgendaDAO {
                 + "LEFT JOIN veterinarios v ON a.ID_VETERINARIO = v.ID_VETERINARIO "
                 + "LEFT JOIN tipos_turno tt ON a.ID_TIPO_TURNO = tt.ID_TIPO_TURNO "
                 + "WHERE a.FECHA BETWEEN ? AND ? AND a.ESTADO = 'ACTIVO' "
-                + "ORDER BY a.FECHA ASC, a.HORA_INICIO ASC";
+        + "ORDER BY a.FECHA ASC, a.HORA_INICIO ASC";
 
         try (Connection conn = cx.conectar(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setDate(1, java.sql.Date.valueOf(fechaInicio));
@@ -413,5 +413,5 @@ public class AgendaDAO {
 
         return agendas;
     }
-    
+
 }

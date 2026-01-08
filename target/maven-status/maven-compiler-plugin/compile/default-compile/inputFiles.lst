@@ -19,6 +19,7 @@ C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\co
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\AgendaDAO.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\AgendaSlotDAO.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\CitaDAO.java
+C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\CiudadDAO.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\ClienteDAO.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\conexion.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\cx\ConstanciaDAO.java
@@ -49,6 +50,7 @@ C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\in
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\Agenda.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\AgendaSlot.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\Cita.java
+C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\Ciudad.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\Cliente.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\Consulta.java
 C:\Users\Usuario\Documents\NetBeansProjects\proyectoVeterinaria\src\main\java\modelo\Documento.java

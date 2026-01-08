@@ -646,18 +646,6 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-4">
-                                <label class="form-label">
-                                    <i class="fas fa-calendar-day"></i> Fecha Desde
-                                </label>
-                                <input type="date" class="form-control" id="filtroFechaDesde">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">
-                                    <i class="fas fa-calendar-day"></i> Fecha Hasta
-                                </label>
-                                <input type="date" class="form-control" id="filtroFechaHasta">
-                            </div>
                             <div class="col-md-4 d-flex align-items-end">
                                 <button class="btn-outline-custom w-100" onclick="limpiarFiltros()">
                                     <i class="fas fa-redo"></i> Limpiar Filtros
@@ -923,7 +911,7 @@
                                     validationDiv.innerHTML = '';
                                     return;
                                 }
-                                // ✅ SIN TEMPLATE LITERALS
+                              
                                 var url = 'AgendaServlet?accion=verificarFeriado&fecha=' + encodeURIComponent(fecha);
                                 fetch(url)
                                         .then(function (r) {
@@ -1007,7 +995,7 @@
                                 var fecha = document.getElementById('filtroFecha').value;
                                 var url = 'AgendaServlet?accion=listar';
                                 if (idVeterinario && fecha) {
-                                    // ✅ SIN TEMPLATE LITERALS
+                                   
                                     url = 'AgendaServlet?accion=porVeterinario&idVeterinario=' + encodeURIComponent(idVeterinario) + '&fecha=' + encodeURIComponent(fecha);
                                 }
                                 fetch(url)
@@ -1232,11 +1220,6 @@
                                 document.getElementById('filtroVeterinario').value = '';
                                 document.getElementById('filtroFecha').value = '';
                                 document.getElementById('filtroTurno').value = '';
-
-                                // ✅ ESTAS DOS LÍNEAS SON LAS QUE FALTAN:
-                                document.getElementById('filtroFechaDesde').value = '';
-                                document.getElementById('filtroFechaHasta').value = '';
-
                                 cargarAgenda();
                             }
 

@@ -172,8 +172,8 @@ public class CitaDAO {
                 + "LEFT JOIN mascotas m ON c.ID_MASCOTA = m.ID_MASCOTA "
                 + "LEFT JOIN veterinarios v ON c.ID_VETERINARIO = v.ID_VETERINARIO "
                 + "WHERE c.ESTADO != 'CANCELADA' "
-                + // ✅ FILTRO CLAVE
-                "ORDER BY s.FECHA_HORA_INICIO DESC";
+                + "AND DATE(s.FECHA_HORA_INICIO) >= CURDATE() "   
+                + "ORDER BY s.FECHA_HORA_INICIO ASC";     
 
         try (Connection conn = conexionDB.conectar(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
 
